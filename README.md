@@ -2,52 +2,98 @@
 
 # FleetIQ AI
 
-FleetIQ AI is a full-stack web application that helps users evaluate auction vehicles and equipment by tracking purchase costs, estimated repairs, resale value, and projected profit.
+## Overview
 
-This project is being built to learn modern full-stack software engineering while following real-world software development practices.
+FleetIQ AI is a web application that helps users search and browse auction vehicles using simple filters such as make, model, year, and mileage.
 
-## Goals
+The goal of the project is to build a clean, fast, and easy-to-use vehicle search experience while learning modern full-stack software engineering practices.
 
-- Build a production-style full-stack application.
-- Learn modern frontend and backend development.
-- Practice Git, GitHub, Docker, CI/CD, and cloud deployment.
-- Integrate AI features into a real software product.
+---
+
+## Why This Project?
+
+Buying vehicles at auction can take a lot of time because buyers often have to search through hundreds or thousands of listings to find vehicles that meet their needs.
+
+FleetIQ AI aims to simplify that process by allowing users to quickly search and filter auction vehicles.
+
+---
+
+## MVP
+
+The first version of FleetIQ AI focuses on one feature:
+
+* Search auction vehicles using filters.
+
+Users will be able to:
+
+* Search by make
+* Search by model
+* Filter by year
+* Filter by maximum mileage
+* View matching vehicle results
+
+The MVP will **not** include:
+
+* User accounts
+* AI recommendations
+* Bidding
+* Buying or selling vehicles
+* Favorites or watchlists
+* Backend APIs
+* Database integration
+
+Sample vehicle data will be stored locally in the frontend so the focus remains on learning React and TypeScript.
+
+---
 
 ## Tech Stack
 
 ### Frontend
-- React
-- TypeScript
-- HTML
-- CSS
-- JavaScript
 
-### Backend
-- Python
-- FastAPI
-- REST APIs
+* React
+* TypeScript
+* Vite
+* HTML
+* CSS
 
-### Database
-- PostgreSQL
+### Future Backend
 
-### DevOps
-- Git
-- GitHub
-- Docker
-- GitHub Actions
-- CI/CD
+* Python
+* FastAPI
+* PostgreSQL
+* Docker
 
-### Cloud
-- Microsoft Azure (planned)
+---
 
-### AI
-- Claude
-- Cursor
-- GitHub Copilot
-- OpenAI API (planned)
+## Learning Goals
 
-## Current Status
+This project is designed to help me learn:
 
-🚧 Project initialization
+* React
+* TypeScript
+* Component-based architecture
+* State management
+* Routing
+* Search and filtering
+* Git and GitHub workflow
+* Professional software development practices
 
-The application architecture is currently being planned before development begins.
+---
+
+## Future Roadmap
+
+After the MVP is complete, future versions may include:
+
+* Backend API
+* PostgreSQL database
+* Real auction data
+* AI-powered vehicle analysis
+* Saved vehicles
+* Price comparisons
+* Vehicle recommendations
+
+---
+
+## Project Status
+
+🚧 In Development — MVP Planning Complete
