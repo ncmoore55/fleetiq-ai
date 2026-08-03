@@ -15,13 +15,13 @@ function App() {
     {/* this is the vehicle search form */}
     <form>
       <label>Make</label>
-      <input></input>
+      <input placeholder="Enter Vehicle Make"></input>
       <label>Model</label>
-      <input></input>
-      <label>year</label>
-      <input></input>
+      <input placeholder="Enter Vehicle Model"></input>
+      <label>Year</label>
+      <input placeholder="Enter Vehicle Year"></input>
       <label>Maximum Mileage</label>
-      <input></input>
+      <input placeholder="Enter Vehicle Mileage"></input>
       <button>Search Vehicles</button>
     </form>
   </div>
