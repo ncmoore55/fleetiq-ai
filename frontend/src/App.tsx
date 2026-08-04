@@ -9,6 +9,16 @@ function App() {
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
 
+  // handles the vehicle search form submission
+  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    console.log("Make:", make)
+    console.log("Model:", model)
+    console.log("Year:", year)
+    console.log("Maximum Mileage:", maximumMileage)
+}
+
   return (
   <div>
     {/* main title page for heading 1 */}
@@ -21,7 +31,8 @@ function App() {
     <h2>Find a vehicle</h2>
 
     {/* this is the vehicle search form */}
-  <form>
+  <form onSubmit={handleSearch}>
+
     <label>Make</label>
     <input
       placeholder="Enter Vehicle Make"
