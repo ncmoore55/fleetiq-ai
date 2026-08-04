@@ -13,10 +13,15 @@ function App() {
   function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    console.log("Make:", make)
-    console.log("Model:", model)
-    console.log("Year:", year)
-    console.log("Maximum Mileage:", maximumMileage)
+    // Create a vehicle search objects from the user's input
+    const searchCriteria = {
+      make,
+      model,
+      year,
+      maximumMileage,
+    }
+
+    console.log(searchCriteria)
 }
 
   return (
