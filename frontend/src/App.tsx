@@ -10,7 +10,7 @@ function App() {
   const [maximumMileage, setMaximumMileage] = useState('')
 
   // handles the vehicle search form submission
-  function handleSearch(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     // Create a vehicle search objects from the user's input
@@ -21,7 +21,15 @@ function App() {
       maximumMileage,
     }
 
-    console.log(searchCriteria)
+    const response = await fetch("http://127.0.0.1:8000/search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(searchCriteria),
+    })
+
+    console.log(response)
 }
 
   return (
