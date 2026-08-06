@@ -21,6 +21,7 @@ function App() {
       maximumMileage,
     }
 
+    // send the vehicle search criteria to the FastAPI backend
     const response = await fetch("http://127.0.0.1:8000/search", {
       method: "POST",
       headers: {
@@ -29,7 +30,10 @@ function App() {
       body: JSON.stringify(searchCriteria),
     })
 
-    console.log(response)
+    // read the JSON response returned by the backend
+    const data = await response.json()
+
+    console.log(data)
 }
 
   return (
