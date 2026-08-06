@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './App.css'
 
 
-type searchResult = {
+type searchResults = {
   make: string
   model: string
   year: string
-  maximumMilage: string
+  maximumMileage: string
 }
 
 // main applicaion components
@@ -15,7 +15,7 @@ function App() {
   const [model, setModel] = useState('')
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
-  const [searchResult, setSearchResult] = useState<searchResult | null>(null)
+  const [searchResults, setSearchResults] = useState<searchResults[]>([])
 
   // handles the vehicle search form submission
   async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
@@ -41,7 +41,7 @@ function App() {
     // read the JSON response returned by the backend
     const data = await response.json()
 
-    setSearchResult(data)
+    setSearchResults(data)
 
     console.log(data)
 }
@@ -92,14 +92,22 @@ function App() {
 
   </form>
 
-  {/* displays the response returned by the backend*/}
-  {searchResult && (
-    <div>
-      <h2>Search Results</h2>
-      <h3>{searchResult.year} {searchResult.make} {searchResult.model}</h3>
-      <p>Maximum Mileage: {searchResult.maximumMileage}</p>
-    </div>
-  )}
+{/* Displays each vehicle returned by the backend */}
+{searchResults.length > 0 && (
+  <div>
+    <h2>Search Results</h2>
+    <p>Vehicle search completed successfully.</p>
+
+    {searchResults.map((vehicle, index) => (
+      <div key={index}>
+        <h3>
+          {vehicle.year} {vehicle.make} {vehicle.model}
+        </h3>
+        <p>Maximum Mileage: {vehicle.maximumMileage}</p>
+      </div>
+    ))}
+  </div>
+)}
 
   </div>
   )

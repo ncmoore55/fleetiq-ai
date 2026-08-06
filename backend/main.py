@@ -19,4 +19,4 @@ def home():
 
 @app.post("/search")
 def search_vehicles(search_criteria: dict):
-    return search_criteria
+    return [search_criteria]
