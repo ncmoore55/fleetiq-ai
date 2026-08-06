@@ -2,13 +2,20 @@ import { useState } from 'react'
 import './App.css'
 
 
+type searchResult = {
+  make: string
+  model: string
+  year: string
+  maximumMilage: string
+}
+
 // main applicaion components
 function App() {
   const [make, setMake] = useState('')
   const [model, setModel] = useState('')
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
-  const [searchResult, setSearchResult] = useState<object | null>(null)
+  const [searchResult, setSearchResult] = useState<searchResult | null>(null)
 
   // handles the vehicle search form submission
   async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
@@ -84,10 +91,14 @@ function App() {
       <button>Search Vehicles</button>
 
   </form>
-  
+
   {/* displays the response returned by the backend*/}
   {searchResult && (
-    <pre>{JSON.stringify(searchResult, null, 2)}</pre>
+    <div>
+      <h2>Search Results</h2>
+      <h3>{searchResult.year} {searchResult.make} {searchResult.model}</h3>
+      <p>Maximum Mileage: {searchResult.maximumMileage}</p>
+    </div>
   )}
 
   </div>
