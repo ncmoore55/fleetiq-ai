@@ -8,6 +8,7 @@ function App() {
   const [model, setModel] = useState('')
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
+  const [searchResult, setSearchResult] = useState<object | null>(null)
 
   // handles the vehicle search form submission
   async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
@@ -32,6 +33,8 @@ function App() {
 
     // read the JSON response returned by the backend
     const data = await response.json()
+
+    setSearchResult(data)
 
     console.log(data)
 }
@@ -81,6 +84,12 @@ function App() {
       <button>Search Vehicles</button>
 
   </form>
+  
+  {/* displays the response returned by the backend*/}
+  {searchResult && (
+    <pre>{JSON.stringify(searchResult, null, 2)}</pre>
+  )}
+
   </div>
   )
 }
