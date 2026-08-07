@@ -103,7 +103,7 @@ function App() {
         <h3>
           {vehicle.year} {vehicle.make} {vehicle.model}
         </h3>
-        <p>Maximum Mileage: {vehicle.maximumMileage}</p>
+        <p>Maximum Mileage: {Number(vehicle.maximumMileage).toLocaleString()}</p>
       </div>
     ))}
   </div>
