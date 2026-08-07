@@ -94,8 +94,14 @@ function App() {
 
 {/* Displays each vehicle returned by the backend */}
 {searchResults.length > 0 && (
+
+
+
   <div>
     <h2>Search Results</h2>
+    <p>
+      {searchResults.length} {searchResults.length == 1 ? "vehicle" : "vehicles"} found
+    </p>
     <p>Vehicle search completed successfully.</p>
 
     {searchResults.map((vehicle, index) => (
@@ -107,6 +113,11 @@ function App() {
       </div>
     ))}
   </div>
+)}
+
+{/* Displays a message when no vehicles are found */}
+{searchResults.length === 0 && (
+  <p>No vehicles found matching your search.</p>
 )}
 
   </div>
