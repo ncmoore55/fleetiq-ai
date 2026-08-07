@@ -99,7 +99,7 @@ function App() {
     <p>Vehicle search completed successfully.</p>
 
     {searchResults.map((vehicle, index) => (
-      <div key={index}>
+      <div key={index} className="vehicle-card">
         <h3>
           {vehicle.year} {vehicle.make} {vehicle.model}
         </h3>

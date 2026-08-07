@@ -16,5 +16,12 @@ button {
   cursor: pointer;
 }
 
+/* vehicle search result cards */
+.vehicle-card {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
 
