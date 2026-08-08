@@ -114,14 +114,15 @@ function App() {
     <p>
       {searchResults.length} {searchResults.length == 1 ? "vehicle" : "vehicles"} found
     </p>
-    <p>Vehicle search completed successfully.</p>
 
     {searchResults.map((vehicle, index) => (
       <div key={index} className="vehicle-card">
         <h3>
           {vehicle.year} {vehicle.make} {vehicle.model}
         </h3>
-        <p>Maximum Mileage: {Number(vehicle.maximumMileage).toLocaleString()}</p>
+        <p>
+          Maximum Mileage: {Number(vehicle.maximumMileage).toLocaleString()} miles
+        </p>
       </div>
     ))}
   </div>
