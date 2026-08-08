@@ -80,6 +80,8 @@ function App() {
 
       <label>Year</label>
       <input 
+        type="number"
+        min="1900"
         placeholder="e.g. 2022"
         value={year}
         onChange={(event) => setYear(event.target.value)}
@@ -88,6 +90,8 @@ function App() {
 
       <label>Maximum Mileage</label>
       <input 
+        type="number"
+        min="0"
         placeholder="e.g. 75,000" 
         value={maximumMileage}
         onChange={(event) => setMaximumMileage(event.target.value)}
