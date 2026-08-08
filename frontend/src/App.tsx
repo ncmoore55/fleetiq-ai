@@ -1,13 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import VehicleCard from "./components/VehicleCard"
+import type { Vehicle } from "./types/vehicle"
 
-type searchResults = {
-  make: string
-  model: string
-  year: string
-  maximumMileage: string
-}
 
 // main applicaion components
 function App() {
@@ -15,7 +10,7 @@ function App() {
   const [model, setModel] = useState('')
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
-  const [searchResults, setSearchResults] = useState<searchResults[]>([])
+  const [searchResults, setSearchResults] = useState<Vehicle[]>([])
   const [hasSearched, setHasSearched] = useState(false)
 
   // handles the vehicle search form submission

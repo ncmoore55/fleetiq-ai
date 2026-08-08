@@ -1,10 +1,8 @@
+import type { Vehicle } from "../types/vehicle"
+
+
 // displays an individual vehicle search result
-type VehicleCardProps = {
-    make: string
-    model: string
-    year: string
-    maximumMileage: string
-}
+type VehicleCardProps = Vehicle
 
 function VehicleCard({ make, model, year, maximumMileage }: VehicleCardProps) {
     return (
