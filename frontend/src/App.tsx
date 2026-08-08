@@ -107,8 +107,6 @@ function App() {
 {/* Displays each vehicle returned by the backend */}
 {searchResults.length > 0 && (
 
-
-
   <div>
     <h2>Search Results</h2>
     <p>
