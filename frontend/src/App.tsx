@@ -67,6 +67,7 @@ function App() {
       placeholder="Enter Vehicle Make"
       value={make}
       onChange={(event) => setMake(event.target.value)}
+      required
     />
 
       <label>Model</label>
@@ -74,6 +75,7 @@ function App() {
         placeholder="Enter Vehicle Model"
         value={model}
         onChange={(event) => setModel(event.target.value)}
+        required
       />
 
       <label>Year</label>
@@ -81,6 +83,7 @@ function App() {
         placeholder="e.g. 2022"
         value={year}
         onChange={(event) => setYear(event.target.value)}
+        required
       />
 
       <label>Maximum Mileage</label>
@@ -88,6 +91,7 @@ function App() {
         placeholder="e.g. 75,000" 
         value={maximumMileage}
         onChange={(event) => setMaximumMileage(event.target.value)}
+        required
       />
 
       <button>Search Vehicles</button>
