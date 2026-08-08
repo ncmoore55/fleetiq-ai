@@ -16,6 +16,7 @@ function App() {
   const [year, setYear] = useState('')
   const [maximumMileage, setMaximumMileage] = useState('')
   const [searchResults, setSearchResults] = useState<searchResults[]>([])
+  const [hasSearched, setHasSearched] = useState(false)
 
   // handles the vehicle search form submission
   async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
@@ -42,6 +43,7 @@ function App() {
     const data = await response.json()
 
     setSearchResults(data)
+    setHasSearched(true)
 
     console.log(data)
 }
@@ -116,7 +118,7 @@ function App() {
 )}
 
 {/* Displays a message when no vehicles are found */}
-{searchResults.length === 0 && (
+{hasSearched && searchResults.length === 0 && (
   <p>No vehicles found matching your search.</p>
 )}
 
