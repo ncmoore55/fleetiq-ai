@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-
+import VehicleCard from "./components/VehicleCard"
 
 type searchResults = {
   make: string
@@ -114,14 +114,13 @@ function App() {
     </p>
 
     {searchResults.map((vehicle, index) => (
-      <div key={index} className="vehicle-card">
-        <h3>
-          {vehicle.year} {vehicle.make} {vehicle.model}
-        </h3>
-        <p>
-          Maximum Mileage: {Number(vehicle.maximumMileage).toLocaleString()} miles
-        </p>
-      </div>
+      <VehicleCard
+       key={index}
+       year={vehicle.year}
+       make={vehicle.make}
+       model={vehicle.model}
+       maximumMileage={vehicle.maximumMileage}
+      />
     ))}
   </div>
 )}
