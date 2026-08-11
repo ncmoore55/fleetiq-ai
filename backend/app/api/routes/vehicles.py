@@ -1,22 +1,10 @@
-# vehicle API routes
 from fastapi import APIRouter
-from backend.app.database.connection import get_db_connection
-  
+from backend.app.services.vehicle_service import get_vehicle_search_results
+
 router = APIRouter()
 
+
+# Handles vehicle search requests
 @router.post("/search")
 def search_vehicles(search_criteria: dict):
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM vehicles;")
-    vehicles = cursor.fetchall()
-
-    return [
-        {
-            "make": vehicle[1],
-            "model": vehicle[2],
-            "year": str(vehicle[3]),
-            "maximumMileage": str(vehicle[4]),
-        }
-        for vehicle in vehicles
-    ]
+    return get_vehicle_search_results()
