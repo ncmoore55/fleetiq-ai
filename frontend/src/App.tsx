@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import VehicleCard from "./components/VehicleCard"
 import type { Vehicle } from "./types/vehicle"
-
+import { searchVehicles } from "./services/vehicleService"
 
 // main applicaion components
 function App() {
@@ -25,17 +25,8 @@ async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     maximumMileage,
   }
 
-  // send the vehicle search criteria to the FastAPI backend
-  const response = await fetch("http://127.0.0.1:8000/search", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(searchCriteria),
-  })
-
-  // read the JSON response returned by the backend
-  const data = await response.json()
+  // request matching vehicles from the backend
+  const data = await searchVehicles(searchCriteria)
 
   setSearchResults(data)
   setHasSearched(true)

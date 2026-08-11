@@ -1,7 +1,7 @@
 # Backend Application from FastAPI
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import vehicles
+from backend.app.api.routes import vehicles
 
 app = FastAPI()
 

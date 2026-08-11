@@ -1,6 +1,6 @@
 # vehicle API routes
 from fastapi import APIRouter
-from database.connection import get_db_connection
+from backend.app.database.connection import get_db_connection
   
 router = APIRouter()
 
